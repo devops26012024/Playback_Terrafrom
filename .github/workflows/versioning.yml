@@ -16,10 +16,11 @@ jobs:
         run: |  
           git config --global user.name "pkumard4"          
           git config --global user.email "pradee030@gmail.com"
+          git push
 
-      - name: Authenticate with PAT
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.PAT_ID }}@github.com/devops26012024/Playback_Terrafrom.git
+    #  - name: Authenticate with PAT
+     #   run: |
+      #    git remote set-url origin https://x-access-token:${{ secrets.PAT_ID }}@github.com/devops26012024/Playback_Terrafrom.git
 
       - name: Push Initial Tag
         env:
