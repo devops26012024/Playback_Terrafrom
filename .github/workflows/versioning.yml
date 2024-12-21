@@ -19,14 +19,14 @@ jobs:
 
       - name: Push Initial Tag
         env:
-          PAT: ${{ secrets.CHANGELOG_TOKEN }}
+          PAT: ${{ secrets.PAT_ID }}
         run: |
           git tag 1.0.0
           git push https://x-access-token:${PAT}@github.com/devops26012024/Playback_Terrafrom.git 1.0.0
           
       - name: Generate Changelog
         env:
-          CHANGELOG_GITHUB_TOKEN: ${{ secrets.CHANGELOG_TOKEN }}
+          CHANGELOG_GITHUB_TOKEN: ${{ secrets.PAT_ID }}
         run: |
           npx conventional-changelog-cli -p angular -i CHANGELOG.md -s
           git add CHANGELOG.md
@@ -41,7 +41,7 @@ jobs:
 
       - name: Create and Push New Version Tag
         env:
-          PAT: ${{ secrets.CHANGELOG_TOKEN }}
+          PAT: ${{ secrets.PAT_ID }}
         run: |
           git tag ${{ env.new_version }}
           git push https://x-access-token:${PAT}@github.com/devops26012024/Playback_Terrafrom.git ${{ env.new_version }}
