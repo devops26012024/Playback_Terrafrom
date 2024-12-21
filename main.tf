@@ -2,12 +2,6 @@ provider "aws" {
   region = "var.aws_region" # Change to your preferred region
 }
 
-# Version variable
-variable "version" {
-  description = "The version of the infrastructure"
-  default     = "v1.0.0"
-}
-
 # AWS Key Pair
 resource "aws_key_pair" "key" {
   key_name   = "key"
