@@ -22,7 +22,7 @@ jobs:
           PAT: ${{ secrets.CHANGELOG_TOKEN }}
         run: |
           git tag 1.0.0
-          git push https://x-access-token:${CHANGELOG_TOKEN}@github.com/devops26012024/Playback_Terraform.git
+          git push https://x-access-token:${CHANGELOG_TOKEN}@github.com/devops26012024/Playback_Terrafrom.git
           
       - name: Generate Changelog
         env:
