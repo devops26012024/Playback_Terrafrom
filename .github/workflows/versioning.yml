@@ -1,6 +1,6 @@
 name: Generate Changelog and Versioning
 
-on:
+on: 
   push:
 
 jobs:
