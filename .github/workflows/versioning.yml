@@ -12,11 +12,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Setup Git
-        run: |
-          git config user.name "secret.USERNAME"
-          git config user.email "secret.EMAIL"
-
       - name: Generate Changelog
         env:
           CHANGELOG_GITHUB_TOKEN: ${{ secrets.CHANGELOG_TOKEN }}
