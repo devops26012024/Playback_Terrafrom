@@ -1,6 +1,6 @@
 provider "aws" {
   region = "var.aws_region" # Change to your preferred region
-}
+} 
 
 # AWS Key Pair
 resource "aws_key_pair" "key" {
