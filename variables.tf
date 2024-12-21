@@ -1,4 +1,4 @@
-variable "version" {
+variable "verson" {
   default = "v1.0.0"
 }
 
