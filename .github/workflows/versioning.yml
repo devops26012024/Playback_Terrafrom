@@ -14,15 +14,15 @@ jobs:
 
       - name: Configure Git
         run: |  
+          git config --global user.name "pkumard4"          
           git config --global user.email "pradee030@gmail.com"
-          git config --global user.name "pkumard4"
 
       - name: Push Tag
         env:
           PAT: ${{ secrets.CHANGELOG_TOKEN }}
         run: |
           git tag 1.0.0
-          git push https://x-access-token:${CHANGELOG_TOKEN}@github.com/devops26012024/Playback_Terrafrom.git
+          git push https://x-access-token:${PAT}@github.com/devops26012024/Playback_Terrafrom.git
           
       - name: Generate Changelog
         env:
