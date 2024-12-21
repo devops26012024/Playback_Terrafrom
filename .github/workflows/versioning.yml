@@ -1,7 +1,7 @@
-name: Generate Changelog and Versioning
+name: Automate Versioning and Changelog
 
 on: 
-  workflow_dispatch: 
+  push: 
 
 jobs:
   versioning:
