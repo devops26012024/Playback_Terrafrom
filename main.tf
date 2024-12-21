@@ -2,11 +2,6 @@ provider "aws" {
   region = "var.aws_region" # Change to your preferred region
 } 
 
-# AWS Key Pair
-resource "aws_key_pair" "key" {
-  key_name   = "guru"
-}
-
 # Security Group
 resource "aws_security_group" "ec2_sg" {
   name        = "ec2-security-group"
