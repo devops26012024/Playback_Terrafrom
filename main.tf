@@ -1,6 +1,7 @@
 provider "aws" {
-  region = "var.aws_region" # Change to your preferred region
-} 
+  region = "ap-south-1"
+}
+
 
 # Security Group
 resource "aws_security_group" "ec2_sg" {
