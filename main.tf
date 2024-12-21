@@ -41,14 +41,14 @@ resource "aws_instance" "ec2" {
 
   tags = {
     Name    = "MyEC2Instance"
-    Version = var.version
+    Version = var.verson
   }
 }
 
 # Output the version
 output "deployed_version" {
   description = "The deployed version of the EC2 instance"
-  value       = var.version
+  value       = var.verson
 }
 
 # Output the instance public IP
