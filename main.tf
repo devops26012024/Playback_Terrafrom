@@ -5,7 +5,7 @@ provider "aws" {
 # AWS Key Pair
 resource "aws_key_pair" "key" {
   key_name   = "key"
-  public_key = file("var.pemfile")
+  public_key = file("guru")
 }
 
 # Security Group
