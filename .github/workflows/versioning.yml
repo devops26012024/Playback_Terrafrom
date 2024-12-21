@@ -1,4 +1,4 @@
-name: Automate Versioning and Changelog
+name: Automate Versioning and Changelog 
 
 on: 
   push: 
@@ -17,12 +17,12 @@ jobs:
           git config --global user.name "pkumard4"          
           git config --global user.email "pradee030@gmail.com"
 
-      - name: Push Tag
+      - name: Push Initial Tag
         env:
           PAT: ${{ secrets.CHANGELOG_TOKEN }}
         run: |
           git tag 1.0.0
-          git push https://github.com/devops26012024/Playback_Terrafrom.git
+          git push https://x-access-token:${PAT}@github.com/devops26012024/Playback_Terrafrom.git 1.0.0
           
       - name: Generate Changelog
         env:
@@ -39,7 +39,9 @@ jobs:
           new_version=$(echo $current_version | awk -F. -v OFS=. '{$NF += 1; print}')
           echo "new_version=$new_version" >> $GITHUB_ENV
 
-      - name: Create Version Tag
+      - name: Create and Push New Version Tag
+        env:
+          PAT: ${{ secrets.CHANGELOG_TOKEN }}
         run: |
           git tag ${{ env.new_version }}
-          git push origin ${{ env.new_version }}
+          git push https://x-access-token:${PAT}@github.com/devops26012024/Playback_Terrafrom.git ${{ env.new_version }}
