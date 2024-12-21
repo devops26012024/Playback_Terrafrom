@@ -30,7 +30,7 @@ resource "aws_security_group" "ec2_sg" {
 # EC2 Instance
 resource "aws_instance" "ec2" {
   ami           = "var.aws_ami" 
-  instance_type = "var.instance_type"
+  instance_type = "t2.micro"
   security_groups = [aws_security_group.ec2_sg.name]
 
   tags = {
