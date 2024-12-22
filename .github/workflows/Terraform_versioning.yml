@@ -27,9 +27,12 @@ jobs:
     - name: Generate Changelog Entry
       id: changelog
       run: |
+        if git rev-parse HEAD~1 >/dev/null 2>&1; then
         changes=$(git diff --name-only HEAD~1 HEAD)
+        else
+        changes="Initial commit or no prior changes"
+        fi
         echo -e "## Version ${{ env.new_version }}\n\n- Changes:\n$changes\n\n" >> CHANGELOG.md
-
     - name: Commit and Push Changes
       run: |
         git config user.name "GitHub Actions"
