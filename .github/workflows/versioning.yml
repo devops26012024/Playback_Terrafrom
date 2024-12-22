@@ -1,7 +1,7 @@
 name: Automate Versioning and Changelog 
 
 on: 
-  push: 
+ # push: 
 
 jobs:
   versioning:
