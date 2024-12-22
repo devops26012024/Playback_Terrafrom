@@ -1,7 +1,7 @@
 name: Terraform Versioning and Changelog
 
 on:
-  push:
+  push: 
 
 jobs:
   version_and_changelog:
